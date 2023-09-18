@@ -1,0 +1,11 @@
+com\sample\controllers\UserController.class
+com\sample\controllers\RoleController.class
+com\sample\service\RoleService.class
+com\sample\activator\JaxRsActivator.class
+com\sample\HelloWorld.class
+com\sample\models\Role.class
+com\sample\models\User.class
+com\sample\service\UserService.class
+com\sample\repository\RoleRepository.class
+com\sample\repository\SessionUtil.class
+com\sample\repository\UserRepository.class

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web_1:web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://java.sun.com/xml/ns/javaee" xmlns:web="https://java.sun.com/xml/ns/javaee" xmlns:web_1="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_3_1.xsd" id="LoginPortal" version="3.1">
+  <web_1:display-name>webclient-ygud</web_1:display-name>
+  <web_1:servlet>
+    <web_1:servlet-name>spring-web</web_1:servlet-name>
+    <web_1:servlet-class>org.springframework.web.servlet.DispatcherServlet</web_1:servlet-class>
+    <web_1:init-param>
+      <web_1:param-name>contextConfigLocation</web_1:param-name>
+      <web_1:param-value>/WEB-INF/spring/spring-config.xml</web_1:param-value>
+    </web_1:init-param>
+    <web_1:load-on-startup>1</web_1:load-on-startup>
+  </web_1:servlet>
+  <web_1:context-param>
+    <web_1:param-name>contextConfigLocation</web_1:param-name>
+    <web_1:param-value>
+		    /WEB-INF/spring/spring-config.xml
+	     </web_1:param-value>
+  </web_1:context-param>
+  <web_1:listener>
+    <web_1:listener-class>org.springframework.web.context.ContextLoaderListener</web_1:listener-class>
+  </web_1:listener>
+  <filter>
+       <filter-name>springSecurityFilterChain</filter-name>
+       <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+   </filter>
+   <filter-mapping>
+       <filter-name>springSecurityFilterChain</filter-name>
+       <url-pattern>/*</url-pattern>
+   </filter-mapping>
+  <web_1:servlet-mapping>
+    <web_1:servlet-name>spring-web</web_1:servlet-name>
+    <web_1:url-pattern>/</web_1:url-pattern>
+  </web_1:servlet-mapping>
+</web_1:web-app>

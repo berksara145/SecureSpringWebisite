@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:tx="http://www.springframework.org/schema/tx"
+   xmlns:jee="http://www.springframework.org/schema/jee" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+   xmlns:context="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/aop"
+   xmlns:mvc="http://www.springframework.org/schema/mvc"
+   xsi:schemaLocation="	http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/jee
+		http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+	
+	<!-- Enable AspectJ style of Spring AOP -->
+<!-- 	<aop:aspectj-autoproxy /> -->
+	
+	<!-- Configure Employee Bean and initialize it -->
+<!-- 	<bean name="User" class="com.trainee.pack.models.User"> -->
+<!-- 		<property name="name" value="Dummy Name"></property> -->
+<!-- 	</bean> -->
+	
+	<!-- Configure EmployeeService bean -->
+<!-- 	<bean name="UserService" class="com.trainee.pack.service.UserService"> -->
+<!-- 		<property name="user" ref="user"></property> -->
+<!-- 	</bean> -->
+	
+	<!-- Configure Aspect Beans, without this Aspects advices wont execute -->
+<!-- 	<bean name="UserAspect" class="com.trainee.pack.aspect.UserAspect" /> -->
+<!-- 	<bean name="UserAspectPointcut" class="com.trainee.pack.aspect.UserAspectPointcut" /> -->
+<!-- 	<bean name="UserAspectJoinPoint" class="com.trainee.pack.aspect.UserAspectJoinPoint" /> -->
+<!-- 	<bean name="UserAfterAspect" class="com.trainee.pack.aspect.UserAfterAspect" /> -->
+<!-- 	<bean name="UserAroundAspect" class="com.trainee.pack.aspect.UserAroundAspect" /> -->
+<!-- 	<bean name="UserAnnotationAspect" class="com.trainee.pack.aspect.UserAnnotationAspect" /> -->
+	
+	<context:component-scan base-package="com.trainee.pack" />
+    <mvc:annotation-driven />
+      <mvc:resources mapping="/views/**" location="/views/" />
+    <mvc:resources mapping="/resources/**" location="/resources/" />
+		<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="prefix" value="/WEB-INF/views/"/>
+	<property name="suffix" value=".jsp"/>
+	</bean>
+	
+	<!-- <bean id="credentialsValidator" class="com.trainee.task.validator.CredentialsValidator" /> -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+	    <property name="basename" value="messages" />
+	</bean>
+</beans>
